@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>starter</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline" style="color: white;;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container">
+    <div class="card bg-analytics">
+      <div class="card-content">
+        <div class="card-body text-center">
+          <div class="avatar avatar-xl bg-primary shadow mt-0">
+            <div class="avatar-content">
+              <i class="feather icon-award white font-large-1"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <h1 class="mb-2">Halo John,</h1>
+            <p class="m-auto w-75">Silahkan masukkan kode akses untuk memulai ujian</p>
+           
+            <div class="position-relative has-icon-left mt-2">
+              <form (ngSubmit)="startExam()" [formGroup]="credentials">
+                <input type="password" id="password-icon" class="form-control" formControlName="access_code" placeholder="Kode Akses">
+                
+                <button  type="submit" class="btn btn-primary mt-2" style="position: relative;" [disabled]="!credentials.valid">Cari Ujian</button>
+              </form>
+              <div class="form-control-position">
+                <i class="feather icon-lock"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

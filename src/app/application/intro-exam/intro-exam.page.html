@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Intro Ujian</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container">
+
+    <h3 style="text-align: center;">Ujian {{mapel}}</h3>
+    <p style="color: rgb(88, 88, 88); text-align: center;">Tingkat {{tingkat}}</p>
+
+    <h5 style="color: rgb(88, 88, 88);">Aturan Ujian</h5>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nihil temporibus id repellat consequatur ducimus rem eaque animi nam, maiores sint expedita itaque enim nobis totam voluptatum molestias dolorum earum?</p>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6"> <label>Tanggal mulai ujian</label> </ion-col>
+        <ion-col size="6"> <p>{{tanggal_mulai}}</p> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> <label>Tanggal Kadaluarsa Ujian</label> </ion-col>
+        <ion-col size="6">
+          <p>{{tanggal_akhir}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> <label>Durasi</label> </ion-col>
+        <ion-col size="6">
+          <p>{{durasi}} Menit</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> <label>Keterangan</label> </ion-col>
+        <ion-col size="6">
+          <p>{{keterangan}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button class="btn btn-primary mt-2" style="position: relative; width: 100%;" [routerLink]="['/exam', id]">Mulai Ujian</button>
+
+  </div>
+
+  
+
+
+
+</ion-content>

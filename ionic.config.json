@@ -1,5 +1,7 @@
 {
   "name": "smartexam",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
