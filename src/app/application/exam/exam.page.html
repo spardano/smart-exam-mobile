@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Ujian Berjalan</ion-title>
+    <ion-title>Soal Ujian</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,25 +9,43 @@
   <div class="container">
     <!-- Nav tabs -->
     <ul class="nav nav-pills mb-20" style="margin-top: 20px;" width="100%">
-      <li class="nav-item"> <a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">1</a> </li>
-      <li class="nav-item"> <a href="#navpills-2" class="nav-link" data-toggle="tab" aria-expanded="false">2</a>
+      <li *ngFor="let item of soal; let y = index" class="nav-item"> 
+        <a href="#navpills-{{item.nomor}}" 
+          [className]="item.nomor == nomorSoal ? 'nav-link active': 'nav-link'" 
+          data-toggle="tab" 
+          aria-expanded="false" 
+          [style.background]="isAnswered(y) ? 'green': ''">
+            {{item.nomor}}
+        </a> 
       </li>
     </ul>
+
     
     <!-- Tab panes -->
-    <div class="tab-content">
-      <div id="navpills-1" class="tab-pane active">
-        <div class="row">
-            Soal 1
+    <div class="tab-content" >
+      <div *ngFor="let item of soal; let i = index" id="navpills-{{item.nomor}}" [className]="item.nomor == 1 ? 'tab-pane active': 'tab-pane'">
+
+        <div class="que_text">
+          <span>{{item.soal}} ?</span>
         </div>
+
+        <div class="option_list" >
+          <div *ngFor="let pilihan of item.get_option"  [className]="anwered(i, pilihan.option_jawaban) ? 'option option_chosen': 'option'" (click)="checkAnswer(pilihan.option_jawaban, i)">
+            <span>{{pilihan.option_jawaban}}. {{pilihan.detail_option}}</span>
+          </div>
+        </div>
+        
       </div>
     
-      <div id="navpills-2" class="tab-pane">
-        <div class="row">
-          Soal 2
-        </div>
-      </div>
-    
+    </div>
+
+    <div class="navigasi" style="margin-top:20px">
+      <!-- <a *ngIf="nomorSoal != soalLength" class="btn btn-primary" href="#navpills-{{nomorSoal}}" data-toggle="tab"
+        aria-expanded="false" (click)="increaseNomorSoal()" style="float: right;">Selanjutnya</a>
+      <a *ngIf="nomorSoal != 1" class="btn btn-primary" href="#navpills-{{nomorSoal}}" data-toggle="tab"
+        aria-expanded="false">Sebelumnya</a> -->
+      
+      <button style="float:right" class="btn btn-success" (click)="selesaiUjian()">Selesai</button>
     </div>
 
   </div>
