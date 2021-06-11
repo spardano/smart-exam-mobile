@@ -39,13 +39,17 @@
     
     </div>
 
-    <div class="navigasi" style="margin-top:20px">
+    <div class="navigasi" style="margin-top:20px; overflow: auto;">
       <!-- <a *ngIf="nomorSoal != soalLength" class="btn btn-primary" href="#navpills-{{nomorSoal}}" data-toggle="tab"
         aria-expanded="false" (click)="increaseNomorSoal()" style="float: right;">Selanjutnya</a>
       <a *ngIf="nomorSoal != 1" class="btn btn-primary" href="#navpills-{{nomorSoal}}" data-toggle="tab"
         aria-expanded="false">Sebelumnya</a> -->
       
       <button style="float:right" class="btn btn-success" (click)="selesaiUjian()">Selesai</button>
+    </div>
+
+    <div class="timer text-center mt-4">
+        <div class="badge badge-warning badge-xl mr-1 mb-1">{{counter | formatTime}}</div>
     </div>
 
   </div>

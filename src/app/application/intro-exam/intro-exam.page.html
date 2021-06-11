@@ -42,7 +42,9 @@
       </ion-row>
     </ion-grid>
 
-    <button class="btn btn-primary mt-2" style="position: relative; width: 100%;" [routerLink]="['/exam', id]">Mulai Ujian</button>
+    <!-- <button class="btn btn-primary mt-2" style="position: relative; width: 100%;" [routerLink]="['/exam', id]">Mulai Ujian</button> -->
+    <button class="btn btn-primary mt-2" style="position: relative; width: 100%;" (click)="startExam()">Mulai
+      Ujian</button>
 
   </div>
 

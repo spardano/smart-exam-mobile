@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-intro-exam',
@@ -22,7 +23,8 @@ export class IntroExamPage implements OnInit {
   detail_ujian:any;
 
   constructor(private route: ActivatedRoute,
-              private http: HttpClient) { 
+              private http: HttpClient,
+              private navCtrl: NavController) { 
 
     this.route.queryParams.subscribe(params => {
       this.id = params['id']
@@ -37,11 +39,19 @@ export class IntroExamPage implements OnInit {
 
   }
 
-  getDetailUjian(){
-    //mengambil detail ujian
+  ngOnInit() {
   }
 
-  ngOnInit() {
+  startExam(){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        id: this.id,
+        durasi: this.durasi,
+      }
+    }
+
+    this.navCtrl.navigateForward(['/exam'], navigationExtras);
+
   }
 
 }

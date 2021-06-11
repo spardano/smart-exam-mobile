@@ -76,6 +76,11 @@ export class AuthService {
       );
   }
 
+  //ambil data user 
+  getUser() {
+    return this.currentUser.getValue();
+  }
+
   //method untuk menampilkan alert message
   showAlert(msg, header) {
     let alert = this.alertCtrl.create({

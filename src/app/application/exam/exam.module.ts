@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ExamPageRoutingModule } from './exam-routing.module';
 
-import { ExamPage } from './exam.page';
+import { ExamPage, FormatTimePipe } from './exam.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { ExamPage } from './exam.page';
     IonicModule,
     ExamPageRoutingModule
   ],
-  declarations: [ExamPage]
+  declarations: [ExamPage, FormatTimePipe]
 })
 export class ExamPageModule {}

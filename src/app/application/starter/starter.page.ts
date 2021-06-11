@@ -25,8 +25,10 @@ export class StarterPage implements OnInit {
               private navCtrl: NavController) { }
 
   ngOnInit() {
+    const userid = this.auth.user.sub;
     this.credentials = this.fb.group({
-      access_code: ['', [Validators.required, Validators.minLength(3)]]
+      access_code: ['', [Validators.required, Validators.minLength(3)]],
+      id_user: userid
     })
   }
 

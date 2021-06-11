@@ -27,7 +27,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'exam/:id',
+    path: 'exam',
     loadChildren: () => import('./application/exam/exam.module').then( m => m.ExamPageModule)
   },
 ];
