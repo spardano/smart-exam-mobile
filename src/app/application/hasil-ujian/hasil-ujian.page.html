@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hasil Ujian</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-list *ngFor="let item of results" lines="none" button [routerLink]="['../detail-disposisi']">
+      <ion-item>
+        <ion-label>{{item.mapel}}</ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <div class="ikon mr-4" style="font-size: 25px; color:gray">
+          <i class="fa fa-check-square-o ikon"></i>
+        </div>
+        <ion-label>
+          <p>Nilai</p>
+          <h2>{{item.score}}</h2>
+        </ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <div class="ikon mr-4" style="font-size: 25px; color:gray">
+          <i class="fa fa-check ikon"></i>
+        </div>
+        <ion-label>
+          <p>Soal Benar</p>
+          <h2>{{item.benar}}</h2>
+        </ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <div class="ikon mr-4" style="font-size: 25px; color:gray">
+          <i class="fa fa-times ikon"></i>
+        </div>
+        <ion-label>
+          <p>Soal Salah</p>
+          <h2>{{item.salah}}</h2>
+        </ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <div class="ikon mr-4" style="font-size: 25px; color:gray">
+          <i class="fa fa-calendar ikon"></i>
+        </div>
+        <ion-label>
+          <p>Tanggal Ujian</p>
+          <h2>{{item.tanggal_mulai}}</h2>
+        </ion-label>
+      </ion-item>
+    
+    </ion-list>
+  </div>
+</ion-content>

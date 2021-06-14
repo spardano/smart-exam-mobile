@@ -28,7 +28,13 @@ const routes: Routes = [
   },
   {
     path: 'exam',
-    loadChildren: () => import('./application/exam/exam.module').then( m => m.ExamPageModule)
+    loadChildren: () => import('./application/exam/exam.module').then( m => m.ExamPageModule),
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'hasil-ujian',
+    loadChildren: () => import('./application/hasil-ujian/hasil-ujian.module').then( m => m.HasilUjianPageModule),
+    canActivate: [AuthGuardService]
   },
 ];
 

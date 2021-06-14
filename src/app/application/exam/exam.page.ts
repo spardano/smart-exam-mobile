@@ -171,7 +171,8 @@ export class ExamPage implements OnInit, OnDestroy {
     });
 
     const scorePerPoin = 100/this.soalLength;
-    const nilai = Math.ceil(jawabanBenar*scorePerPoin);
+    let nilai = 0;
+    nilai = Math.ceil(jawabanBenar*scorePerPoin);
     
     this.simpanHasilUjian(jawabanBenar, jawabanSalah, nilai).subscribe();
 
